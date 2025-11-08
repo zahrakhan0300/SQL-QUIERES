@@ -223,3 +223,71 @@ select e.first_name,d.dept_name from employees e right join departments d on e.d
 select e.first_name,d.dept_name from employees e left join departments d on e.dept_id=d.dept_id 
 union 
 select e.first_name,d.dept_name from employees e right join departments d on e.dept_id=d.dept_id;
+-- question 8 
+-- part 1
+use db;
+select * from employees;
+select * from employees where first_name like 'A%';
+-- question 8 
+-- part 2
+select * from employees where last_name like '%n';
+-- question 8 
+-- part 3
+select e.email,d.dept_name from employees e join departments d on e.dept_id=d.dept_id
+where d.dept_name ='IT';
+-- question 8 
+-- part 4
+select first_name,phone from employees where phone like '%23%';
+-- question 8 
+-- part 5
+select last_name from employees where length(last_name)=5;
+-- question 9
+-- part 1 
+select salary  from employees order by salary desc limit 2;
+-- question 9
+-- part 2
+select first_name, salary from employees where salary< (select avg(salary) from employees) ;
+-- question 9
+-- part 3
+select e.first_name,e.last_name,e.salary,d.dept_name,d.dept_id from employees e left join departments
+d on e.dept_id=d.dept_id ;
+INSERT INTO employees (emp_id, first_name, last_name, email, phone, hire_date, salary, dept_id, manager_id)
+VALUES
+
+(8, 'Zara', 'Khalid', 'zara.khalid@company.com', '0312-2233445', '2023-02-10', 72000.00, 103, 2),
+(9, 'Bilal', 'Sheikh', 'bilal.sheikh@company.com', '0321-3344556', '2021-07-01', 85000.00, 102, 1),
+(10, 'Hina', 'Nawaz', 'hina.nawaz@company.com', '0309-9988776', '2020-11-25', 93000.00, 101, 1),
+(11, 'Usama', 'Rafiq', 'usama.rafiq@company.com', '0341-5566778', '2023-04-04', 61000.00, 103, 2),
+(12, 'Laiba', 'Asif', 'laiba.asif@company.com', '0301-2233112', '2021-05-16', 75000.00, 104, 2),
+(13, 'Tariq', 'Mehmood', 'tariq.mehmood@company.com', '0333-6677889', '2022-03-20', 67000.00, 101, 3),
+(14, 'Sana', 'Riaz', 'sana.riaz@company.com', '0325-7788990', '2020-06-18', 88000.00, 102, 1),
+(15, 'Rehan', 'Ali', 'rehan.ali@company.com', '0334-4455667', '2019-09-12', 99000.00, 104, 2),
+(16, 'Iqra', 'Yousaf', 'iqra.yousaf@company.com', '0317-8899001', '2021-10-03', 72000.00, 103, 3),
+(17, 'Fahad', 'Malik', 'fahad.malik@company.com', '0340-5544332', '2022-05-22', 81000.00, 104, 1),
+(18, 'Eman', 'Akhtar', 'eman.akhtar@company.com', '0308-6677889', '2023-08-19', 64000.00, 102, 3),
+(19, 'Danish', 'Farooq', 'danish.farooq@company.com', '0320-9988775', '2020-02-09', 78000.00, 101, 2),
+(20, 'Shahid', 'Khan', 'shahid.khan@company.com', '0304-2233445', '2021-11-14', 87000.00, 103, 1),
+(21, 'Hira', 'Saleem', 'hira.saleem@company.com', '0313-6677881', '2022-01-05', 69000.00, 104, 2),
+(22, 'Javeria', 'Tariq', 'javeria.tariq@company.com', '0326-7788992', '2023-03-11', 60000.00, 101, 1),
+(23, 'Kashan', 'Butt', 'kashan.butt@company.com', '0307-2233115', '2019-07-27', 95000.00, 102, 1),
+(24, 'Mahnoor', 'Iqbal', 'mahnoor.iqbal@company.com', '0342-5566778', '2020-10-29', 70000.00, 103, 2),
+(25, 'Rafay', 'Ahmed', 'rafay.ahmed@company.com', '0318-4455668', '2021-12-06', 85000.00, 104, 1),
+(26, 'Aiman', 'Saeed', 'aiman.saeed@company.com', '0302-6677883', '2022-07-23', 73000.00, 101, 3);
+SELECT 
+    dept_id,
+    SUM(salary) as total_salary
+FROM employees 
+GROUP BY dept_id
+order by total_salary desc limit 1 ;
+-- question 9
+-- part 4
+select first_name,salary from employees  order by salary desc limit 3;
+-- question 9
+-- part 5
+
+ 
+SELECT 
+    emp_id ,first_name
+FROM employees 
+WHERE manager_id IS NULL;
+
