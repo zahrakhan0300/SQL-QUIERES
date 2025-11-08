@@ -1,0 +1,225 @@
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    city VARCHAR(50)
+);
+use db;
+
+
+
+
+
+
+
+create table departments(
+dept_id int primary key,
+dept_name varchar(50)
+);
+
+
+
+alter table students
+Add column gender VARCHAR(50) ;
+alter table students
+add column department VARCHAR (50);
+alter table students
+add column marks INT;
+
+select * from students;
+INSERT INTO students (student_id,name,age,city,gender,department,marks)VALUES
+(1, 'Ayesha Khan', 19, 'Lahore', 'Female', 'Computer Science', 88),
+(2, 'Ali Raza', 20, 'Karachi', 'Male', 'Electrical Engineering', 75),
+(3, 'Fatima Ahmed', 18, 'Islamabad', 'Female', 'Business Administration', 91),
+(4, 'Usman Malik', 21, 'Multan', 'Male', 'Software Engineering', 82),
+(5, 'Sara Iqbal', 19, 'Faisalabad', 'Female', 'Information Technology', 85),
+(6, 'Hamza Tariq', 22, 'Rawalpindi', 'Male', 'Mechanical Engineering', 73),
+(7, 'Zainab Noor', 20, 'Lahore', 'Female', 'Psychology', 89),
+(8, 'Bilal Hussain', 23, 'Peshawar', 'Male', 'Civil Engineering', 77),
+(9, 'Hira Shah', 19, 'Karachi', 'Female', 'Computer Science', 92),
+(10, 'Ahmad Ali', 20, 'Islamabad', 'Male', 'Economics', 84),
+(11, 'Maryam Rafiq', 18, 'Quetta', 'Female', 'Mass Communication', 79),
+(12, 'Daniyal Aslam', 21, 'Lahore', 'Male', 'Software Engineering', 81),
+(13, 'Noor Fatima', 19, 'Karachi', 'Female', 'Business Administration', 87),
+(14, 'Sami Ullah', 22, 'Multan', 'Male', 'Electrical Engineering', 76),
+(15, 'Iqra Javed', 20, 'Faisalabad', 'Female', 'Computer Science', 93),
+(16, 'Hassan Ahmed', 21, 'Lahore', 'Male', 'Mechanical Engineering', 70),
+(17, 'Eman Tariq', 18, 'Rawalpindi', 'Female', 'Psychology', 83),
+(18, 'Rizwan Malik', 22, 'Karachi', 'Male', 'Civil Engineering', 78),
+(19, 'Laiba Khan', 19, 'Peshawar', 'Female', 'Business Administration', 86),
+(20, 'Imran Qureshi', 23, 'Islamabad', 'Male', 'Software Engineering', 90),
+(21, 'Anum Raza', 20, 'Lahore', 'Female', 'Computer Science', 84),
+(22, 'Umer Saeed', 21, 'Karachi', 'Male', 'Mechanical Engineering', 79),
+(23, 'Sadia Noman', 19, 'Faisalabad', 'Female', 'Economics', 88),
+(24, 'Tahir Hussain', 22, 'Quetta', 'Male', 'Electrical Engineering', 73),
+(25, 'Mahnoor Ali', 18, 'Multan', 'Female', 'Information Technology', 92),
+(26, 'Arham Khan', 20, 'Rawalpindi', 'Male', 'Software Engineering', 81),
+(27, 'Mehak Iqbal', 19, 'Lahore', 'Female', 'Business Administration', 89),
+(28, 'Noman Ahmed', 21, 'Karachi', 'Male', 'Civil Engineering', 75),
+(29, 'Hafsa Noor', 20, 'Peshawar', 'Female', 'Computer Science', 90),
+(30, 'Farhan Tariq', 22, 'Islamabad', 'Male', 'Mechanical Engineering', 77),
+(31, 'Areeba Rafiq', 18, 'Multan', 'Female', 'Psychology', 86),
+(32, 'Zeeshan Ali', 23, 'Lahore', 'Male', 'Electrical Engineering', 80),
+(33, 'Nimra Hassan', 19, 'Karachi', 'Female', 'Software Engineering', 91),
+(34, 'Murtaza Khan', 21, 'Islamabad', 'Male', 'Business Administration', 82),
+(35, 'Huma Tariq', 20, 'Faisalabad', 'Female', 'Computer Science', 87),
+(36, 'Fahad Raza', 22, 'Quetta', 'Male', 'Mechanical Engineering', 74),
+(37, 'Zoya Ahmed', 18, 'Peshawar', 'Female', 'Information Technology', 89),
+(38, 'Adil Hussain', 23, 'Lahore', 'Male', 'Civil Engineering', 78),
+(39, 'Rida Fatima', 19, 'Rawalpindi', 'Female', 'Economics', 85),
+(40, 'Salman Malik', 21, 'Karachi', 'Male', 'Software Engineering', 90),
+(41, 'Anaya Noor', 20, 'Islamabad', 'Female', 'Business Administration', 93),
+(42, 'Taimoor Ali', 22, 'Faisalabad', 'Male', 'Electrical Engineering', 72),
+(43, 'Aqsa Shah', 18, 'Multan', 'Female', 'Computer Science', 84),
+(44, 'Hassan Raza', 21, 'Lahore', 'Male', 'Mechanical Engineering', 81),
+(45, 'Esha Iqbal', 19, 'Karachi', 'Female', 'Psychology', 88),
+(46, 'Rehan Tariq', 22, 'Peshawar', 'Male', 'Civil Engineering', 76),
+(47, 'Sana Ahmed', 18, 'Rawalpindi', 'Female', 'Business Administration', 92),
+(48, 'Owais Malik', 23, 'Islamabad', 'Male', 'Software Engineering', 83),
+(49, 'Mariam Rafiq', 19, 'Faisalabad', 'Female', 'Information Technology', 89),
+(50, 'Shahid Ali', 22, 'Quetta', 'Male', 'Mechanical Engineering', 78);
+select * from students
+where city= 'lahore';
+select * from students
+where city= 'islamabad' AND age=20;
+select * from students
+where city= 'islamabad' OR  age=3;
+select * from students
+where NOT city = 'lahore';
+select * from students
+where city IN  ( 'lahore','karachi');
+select * from students
+where not  city IN  ( 'lahore','karachi');
+select * from students limit 10;
+select * from students order by student_id desc;
+select * from students where age like '2%';
+select * from students where gender like 'M%';
+select * from students where age  like '%3';
+select * from students where name   like '%ar%';
+select * from students where age   between 21 and 23 ;
+select * from departments;
+CREATE TABLE employees (
+  emp_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  phone VARCHAR(20),
+  hire_date DATE,
+  salary DECIMAL(10,2),
+  dept_id INT,
+  manager_id INT,
+  FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+);
+drop table employees;
+INSERT INTO employees 
+(emp_id, first_name, last_name, email, phone, hire_date, salary, dept_id, manager_id)
+VALUES
+(1, 'Ayesha', 'Khan', 'ayesha.khan@company.com', '0301-4567890', '2021-05-10', 85000.00, 101, NULL),
+(2, 'Ali', 'Raza', 'ali.raza@company.com', '0322-9876543', '2020-08-15', 95000.00, 102, 1),
+(3, 'Fatima', 'Ahmed', 'fatima.ahmed@company.com', '0333-1122334', '2022-01-20', 72000.00, 103, 2),
+(4, 'Usman', 'Malik', 'usman.malik@company.com', '0344-2233445', '2019-11-05', 110000.00, 104, 1),
+(5, 'Sara', 'Iqbal', 'sara.iqbal@company.com', '0311-3344556', '2023-03-12', 68000.00, 103, 2),
+(6, 'Hamza', 'Tariq', 'hamza.tariq@company.com', '0302-4455667', '2020-09-22', 78000.00, 101, 1);
+INSERT INTO departments (dept_id, dept_name)
+VALUES
+(101, 'Human Resources'),
+(102, 'Finance'),
+(103, 'IT'),
+(104, 'Marketing');
+select * from departments;
+
+ select e.emp_id , e.first_name, e.last_name , e.phone, e.email from employees e join departments d on e.dept_id=d.dept_id; alter table employees add column manager varchar(50);
+ select e.first_name AS employee, m.first_name AS manager from employees e left join employees m on e.manager_id=m.emp_id;
+ alter table employees add column bonus decimal(10,2); alter table employees modify column phone varchar(20); alter table employees drop column phone; select first_name ,last_name from employees; select distinct dept_id from employees; select salary from employees where salary <60000;
+ select* from employees where hire_date < '2021-01-01';
+ select * from employees order by salary desc;
+  select hire_date,emp_id,first_name  from employees order by hire_date asc;
+  select count(*) emp_id from employees;
+  select AVG (salary)from employees;
+  select salary from employees order by salary desc limit 1;
+  select salary from employees order by salary asc limit 1;
+  SELECT 
+  e.emp_id,
+  e.first_name,
+  e.last_name,
+  d.dept_name,
+  e.salary
+FROM employees e
+JOIN departments d
+ON e.dept_id = d.dept_id;
+INSERT INTO employees (
+  emp_id, first_name, last_name, email, phone, hire_date, salary, dept_id, manager_id
+)
+VALUES
+(7, 'Harry', 'Potter', 'harry.potter@company.com', '0309-1234567', '2024-07-10', 55000, 105, 2);
+INSERT INTO departments (dept_id, dept_name)
+VALUES (105, 'Salels');
+select * from employees;
+select * from departments;
+update employees
+set salary=45000.00
+where first_name='Fatima' and last_name='Ahmed'
+limit 1;
+alter  table departments
+drop column email;
+alter  table departments
+add column  HR varchar (50);
+alter  table departments
+add column  HR_salary varchar (50);
+alter  table departments
+add column IT varchar(50);
+alter  table departments
+add column  IT_salary varchar (50);
+alter  table departments
+add column Finance varchar(50);
+alter  table departments
+add column  f_salary varchar (50);
+alter  table departments
+add column  sales varchar (50);
+select * from departments;
+select e.first_name,e.last_name,e.emp_id,d.dept_id from employees e left join departments d
+on e.dept_id=d.dept_id;
+alter table departments
+drop column HR,
+
+drop column hr_salary,
+drop column IT,
+drop column IT_salary,
+drop column finance,
+drop column f_salary;
+
+SHOW CREATE TABLE employees;
+ALTER TABLE employees
+ADD CONSTRAINT fk_dept
+FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+ALTER TABLE employees
+DROP FOREIGN KEY employees_ibfk_1;
+select * from employees;
+select * from departments;
+
+SELECT 
+    e.first_name,
+    e.last_name,
+    e.emp_id,
+    e.dept_id,
+    d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.dept_id;
+UPDATE employees
+SET salary = salary * 1.10
+WHERE dept_id = 103;
+delete from employees 
+where salary<40000.00
+limit 1;
+delete from employees 
+where dept_id=101
+;
+select e.first_name,d.dept_name from employees e inner join departments d on e.dept_id=d.dept_id;
+select e.first_name,d.dept_name from employees e left join departments d on e.dept_id=d.dept_id;
+select e.first_name,d.dept_name from employees e right join departments d on e.dept_id=d.dept_id;
+select e.first_name,d.dept_name from employees e left join departments d on e.dept_id=d.dept_id 
+union 
+select e.first_name,d.dept_name from employees e right join departments d on e.dept_id=d.dept_id;
